@@ -1,0 +1,106 @@
+Absolutely! Here’s a step-by-step guide to share your Streamlit app publicly using GitHub + Streamlit Cloud, the easiest and fastest way:
+
+1️⃣ Prepare your project
+
+
+Make sure your project folder contains all necessary files, typically:
+
+
+fundraising_demo/
+├── app.py
+├── requirements.txt   # lists Python packages used (Streamlit, pandas, etc.)
+
+
+
+If you don’t have requirements.txt, create it by running in your project folder:
+
+
+pip freeze > requirements.txt
+
+
+
+Optional: Include a .gitignore to ignore unnecessary files (like .DS_Store or __pycache__).
+
+
+
+2️⃣ Push your project to GitHub
+
+
+Create a new repository on GitHub (e.g., fundraising-demo).
+
+
+Open your terminal in your project folder.
+
+
+Initialize git if not already:
+
+
+git init
+git add .
+git commit -m "Initial commit"
+
+
+
+Link to GitHub:
+
+
+git remote add origin https://github.com/yourusername/fundraising-demo.git
+git branch -M main
+git push -u origin main
+
+Now your code is on GitHub.
+
+3️⃣ Deploy on Streamlit Cloud
+
+
+Go to Streamlit Cloud and log in (you can use GitHub to log in).
+
+
+Click “New App”.
+
+
+Select your GitHub repository and the branch (usually main).
+
+
+Specify the file to run (app.py).
+
+
+Click “Deploy”.
+
+
+
+
+Streamlit will automatically install dependencies from requirements.txt.
+
+
+After deployment, you’ll get a public URL, e.g.:
+https://share.streamlit.io/yourusername/fundraising-demo/main/app.py
+
+
+
+
+4️⃣ Share your app
+
+
+Copy the URL and share it with your team or anyone publicly.
+
+
+The app runs entirely in the cloud — no one needs to run anything locally.
+
+
+
+✅ Notes / Tips
+
+
+Free tier apps may sleep after inactivity.
+
+
+To make changes, push updates to GitHub — Streamlit Cloud automatically redeploys.
+
+
+Make sure your requirements.txt lists all packages used in app.py (like streamlit and pandas).
+
+
+
+If you want, I can also write a clean requirements.txt for your fundraising demo so you can deploy it immediately without errors.
+Do you want me to do that?

@@ -1,0 +1,29 @@
+# Ignore Python cache and virtual environment files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore environment and build folders
+.env
+.venv/
+env/
+venv/
+build/
+dist/
+
+# Ignore Streamlit cache
+.streamlit/secrets.toml
+.streamlit/config.toml
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore local test data or CSVs (optional)
+*.xlsx
+*.csv
+*.json
+
+# Ignore temporary notebooks
+*.ipynb_checkpoints/

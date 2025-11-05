@@ -1,0 +1,92 @@
+┌──────────────────────────┐
+│        Faculty           │
+├──────────────────────────┤
+│ FacultyID (PK)           │
+│ Name                     │
+│ Department               │
+│ ContactPerson            │
+│ Email                    │
+└───────────┬──────────────┘
+            │ 1 ──── ∞
+            │
+┌──────────────────────────┐
+│       FundingLog         │   (THIS IS THE MAIN RECORD)
+├──────────────────────────┤
+│ LogID (PK)               │
+│ FacultyID (FK)           │ → Faculty
+│ ProjectTitle             │
+│ ProjectDescription       │
+│ EstimatedAmountNeeded    │
+│ ProposalRequired (Yes/No)│
+│ ProposalStatus           │ (Not Needed / Drafting / Completed)
+│ DonorMatchStatus         │ (Searching / Identified / Approached)
+│ SelectedDonorID (FK)     │ → Donor
+│ LegalStatus              │ (Not Started / Drafting / Submitted / Approved)
+│ ContractID (FK)          │ → Contract
+│ FundingStatus            │ (Pending / Allocated / Completed)
+│ DateCreated              │
+│ DateClosed               │
+└───────────┬──────────────┘
+            │ 1 ──── ∞
+            │
+┌──────────────────────────┐
+│       Proposal           │
+├──────────────────────────┤
+│ ProposalID (PK)          │
+│ LogID (FK)               │ → FundingLog
+│ CreatedBy                │
+│ ProposalType             │ (Template / Auto-Generated / Uploaded)
+│ FileURL                  │
+│ Status                   │ (Draft / Submitted / Approved / Rejected)
+│ DateCreated              │
+└──────────────────────────┘
+
+
+┌──────────────────────────┐
+│          Donor           │
+├──────────────────────────┤
+│ DonorID (PK)             │
+│ Name                     │
+│ Type (Corporate, etc.)   │
+│ SectorFocus              │
+│ MaxFundingAmount         │
+│ ContactPerson            │
+│ Email                    │
+└───────────┬──────────────┘
+            │ 1 ──── ∞
+            │
+┌──────────────────────────┐
+│     DonorMatchRecord     │
+├──────────────────────────┤
+│ MatchID (PK)             │
+│ LogID (FK)               │ → FundingLog
+│ DonorID (FK)             │ → Donor
+│ MatchStatus              │ (Potential / Contacted / Approved / Declined)
+│ Notes                    │
+│ DateMatched              │
+└──────────────────────────┘
+
+
+
+┌──────────────────────────┐
+│         Contract          │
+├──────────────────────────┤
+│ ContractID (PK)          │
+│ LogID (FK)               │ → FundingLog
+│ DonorID (FK)             │ → Donor
+│ ContractFileURL          │
+│ LegalStage               │ (Drafting / Sent to Legal / Approved)
+│ SignatureStatus          │ (Pending / Fully Signed)
+│ DateApproved             │
+└───────────┬──────────────┘
+            │ 1 ──── ∞
+            │
+┌──────────────────────────┐
+│     FundingAllocation     │
+├──────────────────────────┤
+│ AllocationID (PK)        │
+│ ContractID (FK)          │ → Contract
+│ AmountAllocated           │
+│ DateAllocated            │
+│ Notes                    │
+└──────────────────────────┘
