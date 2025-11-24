@@ -21,15 +21,15 @@ SENDER_PASSWORD = "quzhdovrjkkyknpb"  # Use Gmail App Password (not your login p
 
 # Faculty → Fundraiser email mapping
 FACULTY_EMAIL_MAP = {
-    "CBE": "ndabenhlem@uj.ac.za",
-    "FEBE": "tshireletsot@uj.ac.za",
-    "FADA": "dsfakude@uj.ac.za",
-    "LAW": "fundraiser_law@example.com",
-    "SCI": "fundraiser_sci@example.com",
+    "CBE": "amteshane@uj.ac.za",
+    "FEBE": "sthobile@uj.ac.za",
+    "FADA": "sthobile@uj.ac.za",
+    "LAW": "sthobile@uj.ac.za",
+    "SCI": "sthobile@uj.ac.za",
     "HSC": "mpontsho@uj.ac.za",
-    "HUM": "fundraiser_hum@example.com",
-    "EDU": "fundraiser_edu@example.com",
-    "JBS": "fundraiser_jbs@example.com"
+    "HUM": "sthobile@uj.ac.za",
+    "EDU": "sthobile@uj.ac.za",
+    "JBS": "sthobile@uj.ac.za"
 }
 
 # ========== UTILITY FUNCTIONS ==========
